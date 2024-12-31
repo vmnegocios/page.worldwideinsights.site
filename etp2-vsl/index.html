@@ -52,8 +52,8 @@
             box-sizing: border-box;
         }
         .content p {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: light;
             margin-bottom: 20px;
         }
         .counter {
@@ -67,6 +67,32 @@
             font-size: 18px;
             font-weight: bold;
             margin-left: 10px;
+        }
+        .pulsante {
+            animation: pulsar 1.5s infinite;
+        }
+        @keyframes pulsar {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .esconder {
+            display: none; 
+            text-align: center;
+        }
+        .esconder > * {
+            margin: 20px 0;
+        }
+        .esconder img {
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .esconder img.sorteio {
+            max-width: 100%;
+        }
+        .esconder img:not(.sorteio) {
+            max-width: 40%;
         }
     </style>
 </head>
@@ -83,7 +109,46 @@
 
     <!-- Bloco de conteúdo -->
     <div class="content">
-        <div id="vid_67202b8aef45e2000acae360" style="position:relative;width:100%;padding: 133.33333333333331% 0 0;"> <img id="thumb_67202b8aef45e2000acae360" src="https://images.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/67202b8aef45e2000acae360/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> <div id="backdrop_67202b8aef45e2000acae360" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> </div> <script type="text/javascript" id="scr_67202b8aef45e2000acae360"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/67202b8aef45e2000acae360/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
+        <div id="vid_67202b8aef45e2000acae360" style="position:relative;width:100%;padding: 133.33333333333331% 0 0;"> 
+            <img id="thumb_67202b8aef45e2000acae360" src="https://images.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/67202b8aef45e2000acae360/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> 
+            <div id="backdrop_67202b8aef45e2000acae360" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> 
+        </div> 
+        <script type="text/javascript" id="scr_67202b8aef45e2000acae360"> 
+            var s=document.createElement("script"); 
+            s.src="https://scripts.converteai.net/7ee76c7b-b701-481f-b973-2b478faae041/players/67202b8aef45e2000acae360/player.js", s.async=!0,document.head.appendChild(s); 
+        </script> 
+        <style> 
+            .elementor-element:has(#smartplayer) { width: 100%; } 
+        </style>
+
+        <!-- Sessões escondidas dentro do mesmo container -->
+        <div class="esconder">
+            <!-- Sessão 1 -->
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='SEULINKDECHECKOUTAQUI.COM';">PAY $9 FEE</button>
+
+            <!-- Sessão 2 -->
+            <img class="sorteio" src="images/sorteio.png" alt="Sorteio">
+
+            <!-- Sessão 3 -->
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='SEULINKDECHECKOUTAQUI.COM';">PAY $9 FEE</button>
+            <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
+
+            <!-- Sessão 4 -->
+            <img src="images/suporte.png" alt="Suporte">
+            <h2 style="color: #000000;">SUPPORT 24/7</h2>
+            <h3 style="color: #000000;">A support service for you every day at any time. You will receive personalized service to answer all your questions and help you during the process.</h3>
+
+            <!-- Sessão 5 -->
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='SEULINKDECHECKOUTAQUI.COM';">PAY $9 FEE</button>
+            <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
+
+            <!-- Sessão 6 -->
+            <img src="images/garantia.png" alt="Garantia">
+
+            <!-- Sessão 7 -->
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='SEULINKDECHECKOUTAQUI.COM';">PAY $9 FEE</button>
+            <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
+        </div>
     </div>
 
     <script>
@@ -118,8 +183,41 @@
         window.onload = function() {
             playMoneySound();
             updateBalance();
-            updateCounter();
         };
+    </script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var SECONDS_TO_DISPLAY = 10; // Tempo para exibir as sessões
+            var CLASS_TO_DISPLAY = ".esconder";
+
+            var attempts = 0;
+            var elsHiddenList = [];
+            var elsDisplayed = false;
+            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+
+            setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+            var showHiddenElements = function () {
+                elsDisplayed = true;
+                elsHiddenList.forEach((e) => e.style.display = "block");
+            }
+
+            var startWatchVideoProgress = function () {
+                if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+                    if (attempts >= 10) return;
+                    attempts += 1;
+                    return setTimeout(function () { startWatchVideoProgress() }, 1000);
+                }
+                smartplayer.instances[0].on('timeupdate', () => {
+                    if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+                    if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+                    showHiddenElements();
+                })
+            }
+
+            startWatchVideoProgress();
+        });
     </script>
 
 </body>
