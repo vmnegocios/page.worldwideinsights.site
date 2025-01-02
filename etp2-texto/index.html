@@ -121,7 +121,7 @@
         <p>If haven't reached 1000 people, you can still register and access the TikTok Pay APP</p>
         <p>Click the button below to pay the $9 registration fee</p>
 
-        <a href="https://pay.hotmart.com/P93093817U?off=blkj8qhj" class="button">REGISTER NOW</a>
+        <a href="#" class="button" id="register-button">REGISTER NOW</a>
     </div>
 
     <script>
@@ -183,6 +183,31 @@
             updateBalance();
             updateCounter();
         };
+
+        // Função para passar UTMs para a próxima página
+        function getQueryParams() {
+            const query = window.location.search.substring(1);
+            const params = {};
+            query.split('&').forEach(param => {
+                const [key, value] = param.split('=');
+                params[key] = decodeURIComponent(value || '');
+            });
+            return params;
+        }
+
+        function buildDynamicLink(baseLink) {
+            const params = getQueryParams();
+            const queryString = new URLSearchParams(params).toString();
+            return `${baseLink}?${queryString}`;
+        }
+
+        const registerButton = document.getElementById('register-button');
+        registerButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const dynamicLink = buildDynamicLink('https://pay.hotmart.com/P93093817U?off=blkj8qhj');
+            window.location.href = dynamicLink;
+        });
+
     </script>
 
 </body>
