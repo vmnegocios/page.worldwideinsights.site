@@ -22,6 +22,14 @@
       a.setAttribute("defer", "");
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
       document.head.appendChild(a);
+
+      function appendUTMsToURL(url) {
+        const utmParams = new URLSearchParams(window.location.search);
+        if (utmParams.toString()) {
+          return url.includes('?') ? `${url}&${utmParams.toString()}` : `${url}?${utmParams.toString()}`;
+        }
+        return url;
+      }
     </script>
 
     <style>
@@ -140,13 +148,13 @@
         <!-- Sessões escondidas dentro do mesmo container -->
         <div class="esconder">
             <!-- Sessão 1 -->
-            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='https://pay.hotmart.com/P93093817U?off=blkj8qhj';">PAY $9 FEE</button>
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href=appendUTMsToURL('https://pay.hotmart.com/P93093817U?off=blkj8qhj');">PAY $9 FEE</button>
 
             <!-- Sessão 2 -->
             <img class="sorteio" src="images/sorteio.png" alt="Sorteio">
 
             <!-- Sessão 3 -->
-            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='https://pay.hotmart.com/P93093817U?off=blkj8qhj';">PAY $9 FEE</button>
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href=appendUTMsToURL('https://pay.hotmart.com/P93093817U?off=blkj8qhj');">PAY $9 FEE</button>
             <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
 
             <!-- Sessão 4 -->
@@ -155,14 +163,14 @@
             <h3 style="color: #000000;">A support service for you every day at any time. You will receive personalized service to answer all your questions and help you during the process.</h3>
 
             <!-- Sessão 5 -->
-            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='https://pay.hotmart.com/P93093817U?off=blkj8qhj';">PAY $9 FEE</button>
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href=appendUTMsToURL('https://pay.hotmart.com/P93093817U?off=blkj8qhj');">PAY $9 FEE</button>
             <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
 
             <!-- Sessão 6 -->
             <img src="images/garantia.png" alt="Garantia">
 
             <!-- Sessão 7 -->
-            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href='https://pay.hotmart.com/P93093817U?off=blkj8qhj';">PAY $9 FEE</button>
+            <button class="pulsante" style="background-color: #00CC07; color: #FFFFFF; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px;" onclick="window.location.href=appendUTMsToURL('https://pay.hotmart.com/P93093817U?off=blkj8qhj');">PAY $9 FEE</button>
             <p style="margin-top: 10px;">Once you have reserved your place, you will have immediate access.</p>
         </div>
     </div>
