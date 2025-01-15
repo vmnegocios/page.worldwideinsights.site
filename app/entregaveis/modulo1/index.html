@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos para o cabeçalho fixo com a seta de voltar */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header a:hover {
+            color: #007BFF; /* Cor da seta quando o usuário passa o mouse */
+        }
+
+        .header .back-arrow {
+            margin-right: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0 0 0; /* Espaço para não cobrir o topo da página devido ao cabeçalho fixo */
+        }
+
+        .image-container {
+            width: 100%;
+            margin-bottom: 0; /* Remove espaço entre as imagens */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho fixo com link de voltar -->
+    <div class="header">
+        <a href="../../index.html">
+            <span class="back-arrow">&#8592;</span> Return
+        </a>
+        <div></div> <!-- Espaço vazio à direita -->
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="images/imagem1.png" alt="Página 1 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem2.png" alt="Página 2 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem3.png" alt="Página 3 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem4.png" alt="Página 4 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem5.png" alt="Página 5 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem6.png" alt="Página 6 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem7.png" alt="Página 7 do Módulo 1">
+        </div>
+        <div class="image-container">
+            <img src="images/imagem8.png" alt="Página 8 do Módulo 1">
+        </div>
+    </div>
+
+</body>
+</html>
