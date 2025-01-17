@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+            width: max-content; /* Ajusta a largura da faixa para caber todos os itens */
+        }
+
+        .carousel-item {
+            min-width: 200px;
+            margin: 0 10px;
+        }
+
+        .carousel-item img {
+            width: 250px;
+            height: 356px; /* 9:16 aspect ratio */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .arrow {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo da empresa -->
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+        </div>
+
+        <h1>Bienvenido</h1>
+        <p>Seleccione uno de los módulos a continuación para comenzar:</p>
+
+        <div class="carousel">
+            <button class="arrow arrow-left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item">
+                    <a href="entregaveis/modulo1/index.html">
+                        <img src="images/modulo1.png" alt="Módulo 1 - Introdução">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="entregaveis/modulo2/index.html">
+                        <img src="images/modulo2.png" alt="Módulo 2 - Alimentação Saudável">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="entregaveis/modulo3/index.html">
+                        <img src="images/modulo3.png" alt="Módulo 3 - Exercícios Físicos">
+                    </a>
+                </div>
+                <!-- Adicione mais módulos conforme necessário -->
+            </div>
+            <button class="arrow arrow-right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const track = document.querySelector('.carousel-track');
+            const items = document.querySelectorAll('.carousel-item');
+            const itemWidth = items[0].getBoundingClientRect().width;
+            const gap = 20; // Espaço entre os itens (10px em cada lado)
+            const totalSlides = items.length;
+
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide >= totalSlides - 1) {
+                currentSlide = totalSlides - 1;
+            }
+
+            track.style.transform = `translateX(${-currentSlide * (itemWidth + gap)}px)`;
+        }
+
+        // Alinha o primeiro módulo à esquerda quando a página é carregada
+        document.addEventListener('DOMContentLoaded', function() {
+            moveCarousel(0);
+        });
+    </script>
+
+</body>
+</html>
